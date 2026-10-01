@@ -1,10 +1,12 @@
 # Stats Magic Host downloads
 
+[![Current version](https://img.shields.io/github/v/release/SteeZyT33/stats-magic-host-downloads?display_name=tag&label=current%20version)](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest)
+
 Public distribution of Stats Magic Host by Amara’s Lab. This repository contains the download page, installation instructions, and release assets. It does not contain the Stats Magic application source.
 
 ## Windows
 
-Download [sm-host v1.10.6](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/tag/sm-host-v1.10.6), extract the ZIP, and run `sm-host.exe`. Keep the `_internal` directory beside the executable. Follow the prompts and pair using the code from your Stats Magic website.
+Download [the latest sm-host for Windows](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-windows-amd64.zip) ([release notes](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest)), extract the ZIP, and run `sm-host.exe`. Keep the `_internal` directory beside the executable. Follow the prompts and pair using the code from your Stats Magic website.
 
 The package is unsigned. Windows may show a SmartScreen warning. Linux packages are not available yet.
 
