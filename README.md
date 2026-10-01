@@ -8,11 +8,15 @@ Public distribution of Stats Magic Host by Amara’s Lab. This repository contai
 
 Download [the latest sm-host for Windows](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-windows-amd64.zip) ([release notes](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest)), extract the ZIP, and run `sm-host.exe`. Keep the `_internal` directory beside the executable. Follow the prompts and pair using the code from your Stats Magic website.
 
-The package is unsigned. Windows may show a SmartScreen warning. Linux packages are not available yet.
+The package is unsigned. Windows may show a SmartScreen warning.
+
+## Linux (x86_64)
+
+Download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz), then run `tar -xzf sm-host-linux-amd64.tar.gz` and start `./sm-host` from the extracted folder. Pair using the code from your Stats Magic website. Linux packages are included from the release after v1.13.1.
 
 ## Integrity
 
-Each release includes SHA256SUMS. Compare it with `Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256` in PowerShell.
+Each release includes SHA256SUMS. On Windows, compare it with `Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256` in PowerShell. On Linux, run `sha256sum -c SHA256SUMS --ignore-missing` in the download folder.
 
 ## Maintainers
 
