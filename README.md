@@ -12,7 +12,7 @@ The package is unsigned. Windows may show a SmartScreen warning.
 
 ## Linux (x86_64)
 
-Download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz), then run `tar -xzf sm-host-linux-amd64.tar.gz` and start `./sm-host` from the extracted folder. Pair using the code from your Stats Magic website. Linux packages are included from the release after v1.13.1.
+Download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz), then run `tar -xzf sm-host-linux-amd64.tar.gz` and start `./sm-host` from the extracted folder. Pair using the code from your Stats Magic website. Linux packages are included from v1.13.4 onward.
 
 ## Integrity
 
