@@ -1,16 +1,22 @@
 # Stats Magic Host downloads
 
+[![Current version](https://img.shields.io/github/v/release/SteeZyT33/stats-magic-host-downloads?display_name=tag&label=current%20version)](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest)
+
 Public distribution of Stats Magic Host by Amara’s Lab. This repository contains the download page, installation instructions, and release assets. It does not contain the Stats Magic application source.
 
 ## Windows
 
-Download [sm-host v1.10.6](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/tag/sm-host-v1.10.6), extract the ZIP, and run `sm-host.exe`. Keep the `_internal` directory beside the executable. Follow the prompts and pair using the code from your Stats Magic website.
+Download [the latest sm-host for Windows](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-windows-amd64.zip) ([release notes](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest)), extract the ZIP, and run `sm-host.exe`. Keep the `_internal` directory beside the executable. Follow the prompts and pair using the code from your Stats Magic website.
 
-The package is unsigned. Windows may show a SmartScreen warning. Linux packages are not available yet.
+The package is unsigned. Windows may show a SmartScreen warning.
+
+## Linux (x86_64)
+
+Download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz), then run `tar -xzf sm-host-linux-amd64.tar.gz` and start `./sm-host` from the extracted folder. Pair using the code from your Stats Magic website. Linux packages are included from v1.13.4 onward.
 
 ## Integrity
 
-Each release includes SHA256SUMS. Compare it with `Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256` in PowerShell.
+Each release includes SHA256SUMS. On Windows, compare it with `Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256` in PowerShell. On Linux, run `sha256sum -c SHA256SUMS --ignore-missing` in the download folder.
 
 ## Maintainers
 
