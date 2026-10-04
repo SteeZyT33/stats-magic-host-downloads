@@ -22,4 +22,4 @@ Each release includes SHA256SUMS. On Windows, compare it with `Get-FileHash .\sm
 
 Only publish reviewed release packages and public documentation here. Never upload device.json, credentials, local state, private logs, or a checkout of the application repository. Do not overwrite existing release assets: publish a new version for changes.
 
-For each new release, verify the source artifact checksum, publish the ZIP and SHA256SUMS together, and update the version, size, links and hash in index.html and latest.json. The website is served by GitHub Pages from main at the repository root. Custom domain target: downloads.amaras-lab.com. DNS CNAME target: SteeZyT33.github.io.
+Releases are published here automatically by the CS2-Stats-Magic release workflow. index.html links to the latest release and reads its version, sizes and checksums from the GitHub API, so it needs no edit per release. latest.json is not updated automatically. The website is served by GitHub Pages from main at the repository root. Custom domain target: downloads.amaras-lab.com. DNS CNAME target: SteeZyT33.github.io.
