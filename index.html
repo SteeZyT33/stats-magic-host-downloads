@@ -18,7 +18,7 @@
 <details><summary>Verify your download</summary><p>In PowerShell, run:</p><p><code>Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256</code></p><p>On Linux, run <code>sha256sum -c SHA256SUMS --ignore-missing</code> next to the download.</p><p data-hash-intro>Compare the result with the release’s SHA256SUMS file.</p><p><code data-hash="sm-host-windows-amd64.zip"></code></p><p><code data-hash="sm-host-linux-amd64.tar.gz"></code></p></details>
 </main><footer>Amara’s Lab · S. Taylor Labs · <a href="https://github.com/SteeZyT33/stats-magic-host-downloads">Download archive</a></footer>
 <script>
-// The links above always point at the newest release; this only fills in its version, sizes and checksums.
+// The links above always point at the newest release. This fills in its version, sizes and checksums, and pins the links to that same release.
 fetch("https://api.github.com/repos/SteeZyT33/stats-magic-host-downloads/releases/latest",{headers:{Accept:"application/vnd.github+json"}})
 .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
 .then(function(rel){
@@ -27,6 +27,7 @@ document.querySelectorAll("[data-version]").forEach(function(el){el.textContent=
 document.querySelectorAll("[data-notes]").forEach(function(el){if(rel.html_url)el.href=rel.html_url});
 var hashes=0;
 (rel.assets||[]).forEach(function(a){
+if(a.browser_download_url)document.querySelectorAll('a[href$="/releases/latest/download/'+a.name+'"]').forEach(function(el){el.href=a.browser_download_url});
 document.querySelectorAll('[data-size="'+a.name+'"]').forEach(function(el){el.textContent=" · "+(a.size/1048576).toFixed(1)+" MiB"});
 var d=String(a.digest||"").replace(/^sha256:/,"");
 document.querySelectorAll('[data-hash="'+a.name+'"]').forEach(function(el){if(d){el.textContent=a.name+": "+d;hashes++}});
