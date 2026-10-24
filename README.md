@@ -18,6 +18,12 @@ Download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic
 
 Each release includes SHA256SUMS. On Windows, compare it with `Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256` in PowerShell. On Linux, run `sha256sum -c SHA256SUMS --ignore-missing` in the download folder.
 
+## Plugins
+
+`plugins/catalog.json` lists the Metamod:Source, CounterStrikeSharp, MultiAddonManager and MatchZy release each Stats Magic Host installs, with a SHA-256 for every download. Hosts check it once an hour and use it only when `plugins/catalog.json.sig` is a valid Ed25519 signature from the key built into sm-host and the `serial` is higher than the last list they used.
+
+To publish a plugin update: change the version, URL and SHA-256, raise `serial` by one, and merge to main. The Sign plugin list workflow waits for the owner's approval, signs the list with the `PLUGIN_SIGNING_KEY` secret of the `plugin-signing` environment, commits the `.sig`, and rebuilds the site. Until the new signature is published, hosts keep the list they have.
+
 ## Maintainers
 
 Only publish reviewed release packages and public documentation here. Never upload device.json, credentials, local state, private logs, or a checkout of the application repository. Do not overwrite existing release assets: publish a new version for changes.
