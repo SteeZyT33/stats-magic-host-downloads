@@ -1,0 +1,41 @@
+name: Sign plugin list
+
+# A change to plugins/catalog.json on main waits for the owner's approval (the plugin-signing
+# environment), then gets signed and published to downloads.amaras-lab.com/plugins/.
+on:
+  push:
+    branches: [main]
+    paths: [plugins/catalog.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency: sign-plugin-list
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    environment: plugin-signing
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+
+      - name: Sign plugins/catalog.json
+        env:
+          PLUGIN_SIGNING_KEY: ${{ secrets.PLUGIN_SIGNING_KEY }}
+        run: python3 tools/sign_catalog.py sign plugins/catalog.json
+
+      - name: Publish the signature
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          serial=$(python3 -c 'import json; print(json.load(open("plugins/catalog.json"))["serial"])')
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add plugins/catalog.json.sig
+          git commit -m "Sign plugin list ${serial}"
+          git push
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds"

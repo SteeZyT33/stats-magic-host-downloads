@@ -15,6 +15,7 @@
      ╱ ╲</pre></article>
 <article class="card"><div><div class="badge">LINUX · X86_64 · <span data-version>LATEST</span></div><h2>Stats Magic Host for Linux</h2><p>For Ubuntu 20.04+, Debian 11+ and similar. Extract the archive and keep its files together.</p><a class="button" href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz">Download for Linux ↓</a><p class="meta">TAR.GZ<span data-size="sm-host-linux-amd64.tar.gz"></span> · No GitHub account required</p><div class="links"><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest" data-notes>Release notes</a><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/SHA256SUMS">SHA-256 checksums</a></div></div></article>
 <section><h2>Get connected</h2><ol><li>Download the ZIP (Windows) or TAR.GZ (Linux) and extract all files.</li><li>Open <code>sm-host.exe</code> from the extracted folder. On Linux, run <code>./sm-host</code> from it.</li><li>Follow the setup prompts and use the pairing code from your Stats Magic website.</li></ol><p class="meta">The Windows build is unsigned, so Windows may show a SmartScreen warning. On Linux, SteamCMD needs 32-bit libraries: <code>sudo dpkg --add-architecture i386 &amp;&amp; sudo apt update &amp;&amp; sudo apt install -y lib32gcc-s1</code></p></section>
+<section id="plugins"><h2>Plugins</h2><p>Stats Magic Host installs these server plugins and keeps them up to date from a signed list, <a href="plugins/catalog.json">plugins/catalog.json</a>. To install one by hand, use the same release and check its SHA-256.</p><ul data-plugins class="meta"><li>Loading the plugin list…</li></ul></section>
 <details><summary>Verify your download</summary><p>In PowerShell, run:</p><p><code>Get-FileHash .\sm-host-windows-amd64.zip -Algorithm SHA256</code></p><p>On Linux, run <code>sha256sum -c SHA256SUMS --ignore-missing</code> next to the download.</p><p data-hash-intro>Compare the result with the release’s SHA256SUMS file.</p><p><code data-hash="sm-host-windows-amd64.zip"></code></p><p><code data-hash="sm-host-linux-amd64.tar.gz"></code></p></details>
 </main><footer>Amara’s Lab · S. Taylor Labs · <a href="https://github.com/SteeZyT33/stats-magic-host-downloads">Download archive</a></footer>
 <script>
@@ -34,5 +35,14 @@ document.querySelectorAll('[data-hash="'+a.name+'"]').forEach(function(el){if(d)
 });
 if(hashes)document.querySelector("[data-hash-intro]").textContent="For "+v+", the results should be:";
 }).catch(function(){});
+fetch("plugins/catalog.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+.then(function(list){
+var names={metamod:"Metamod:Source",counterstrikesharp:"CounterStrikeSharp",multiaddonmanager:"MultiAddonManager",matchzy:"MatchZy"},os={windows:"Windows",linux:"Linux",any:"Windows and Linux"};
+var ul=document.querySelector("[data-plugins]");ul.textContent="";
+Object.keys(list.plugins||{}).forEach(function(key){var p=list.plugins[key];
+Object.keys(p.downloads||{}).forEach(function(platform){var d=p.downloads[platform],li=document.createElement("li"),a=document.createElement("a"),c=document.createElement("code");
+a.href=d.url;a.textContent=(names[key]||key)+" "+p.version+" for "+(os[platform]||platform);c.textContent=d.sha256;
+li.appendChild(a);li.appendChild(document.createTextNode(" · SHA-256 "));li.appendChild(c);ul.appendChild(li)})});
+}).catch(function(){document.querySelector("[data-plugins]").textContent="The plugin list could not be loaded."});
 </script>
 </body></html>
