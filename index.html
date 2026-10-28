@@ -44,7 +44,7 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
            ┌┘└┐           
           ╱╱  ╲╲          </pre></div>
 <div class="downloads">
-<article class="panel"><div class="head"><span class="label">Windows · 64-bit</span><span class="label" data-version>LATEST</span></div><div class="body"><h2>Stats Magic Host for Windows</h2><p data-zip-only hidden>A portable download. Extract the whole folder and keep its files together.</p><p data-needs="StatsMagicHost-Setup.exe">Host + SM² adds the Stats Magic app on your PC, so you can run your servers even when the website is down. Host only sits in the tray and you manage everything on the website.</p><div class="choices"><a class="button primary" data-needs="StatsMagicHost-Setup.exe" href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/StatsMagicHost-Setup.exe">Host + SM² ↓</a><a class="button" data-needs="StatsMagicHost-HostOnly-Setup.exe" href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/StatsMagicHost-HostOnly-Setup.exe">Host only ↓</a></div><p class="meta" data-needs="StatsMagicHost-Setup.exe">Setup.exe<span data-size="StatsMagicHost-Setup.exe"></span> · Host only<span data-size="StatsMagicHost-HostOnly-Setup.exe"></span> · No GitHub account required</p><div class="links"><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-windows-amd64.zip" data-zip>Portable ZIP<span data-size="sm-host-windows-amd64.zip"></span></a><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest" data-notes>Release notes</a><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/SHA256SUMS">SHA-256 checksums</a></div></div></article>
+<article class="panel"><div class="head"><span class="label">Windows · 64-bit</span><span class="label" data-version data-setup-version>LATEST</span></div><div class="body"><h2>Stats Magic Host for Windows</h2><p data-zip-only hidden>A portable download. Extract the whole folder and keep its files together.</p><p data-needs="StatsMagicHost-Setup.exe">Host + SM² adds the Stats Magic app on your PC, so you can run your servers even when the website is down. Host only sits in the tray and you manage everything on the website.</p><div class="choices"><a class="button primary" data-needs="StatsMagicHost-Setup.exe" href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases">Host + SM² ↓</a><a class="button" data-needs="StatsMagicHost-HostOnly-Setup.exe" href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases">Host only ↓</a></div><p class="meta" data-needs="StatsMagicHost-Setup.exe">Setup.exe<span data-size="StatsMagicHost-Setup.exe"></span> · Host only<span data-size="StatsMagicHost-HostOnly-Setup.exe"></span> · No GitHub account required</p><div class="links"><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-windows-amd64.zip" data-zip>Portable ZIP<span data-size="sm-host-windows-amd64.zip"></span></a><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest" data-notes>Release notes</a><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/SHA256SUMS">SHA-256 checksums</a></div></div></article>
 <article class="panel"><div class="head"><span class="label">Linux · x86_64</span><span class="label" data-version>LATEST</span></div><div class="body"><h2>Stats Magic Host for Linux</h2><p>For Ubuntu 20.04+, Debian 11+ and similar. Extract the archive and keep its files together.</p><a class="button" href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz">Download for Linux ↓</a><p class="meta">TAR.GZ<span data-size="sm-host-linux-amd64.tar.gz"></span> · No GitHub account required</p><div class="links"><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest" data-notes>Release notes</a><a href="https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/SHA256SUMS">SHA-256 checksums</a></div></div></article>
 </div>
 <section class="panel"><div class="head"><span class="label">Get connected</span></div><div class="body"><ol><li data-zip-only hidden>Download the ZIP (Windows) or TAR.GZ (Linux) and extract all files, then open <code>sm-host.exe</code> from the extracted folder. On Linux, run <code>./sm-host</code> from it.</li><li data-needs="StatsMagicHost-Setup.exe">On Windows, run the Setup.exe you downloaded. On Linux, extract the TAR.GZ and run <code>./sm-host</code> from its folder.</li><li>Follow the setup prompts and use the pairing code from your Stats Magic website.</li></ol><p class="meta" data-needs="StatsMagicHost-Setup.exe">Setup adds the Windows Firewall rules your servers need, so Windows does not ask about them later. Already on 1.13? Setup keeps your pairing, servers and game files, and starts servers that were running.</p><p class="meta note">The Windows build is unsigned, so Windows may show a SmartScreen warning.</p><p class="meta">On Linux, SteamCMD needs 32-bit libraries: <code>sudo dpkg --add-architecture i386 &amp;&amp; sudo apt update &amp;&amp; sudo apt install -y lib32gcc-s1</code></p></div></section>
@@ -54,7 +54,7 @@ footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
 </main><footer>Amara’s Lab · <a href="https://github.com/SteeZyT33/stats-magic-host-downloads">Download archive</a></footer>
 <script>
 // The links above always point at the newest release. This fills in its version, sizes and checksums, and pins the links to that same release.
-fetch("https://api.github.com/repos/SteeZyT33/stats-magic-host-downloads/releases/latest",{headers:{Accept:"application/vnd.github+json"}})
+var latestDone=fetch("https://api.github.com/repos/SteeZyT33/stats-magic-host-downloads/releases/latest",{headers:{Accept:"application/vnd.github+json"}})
 .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
 .then(function(rel){
 var v=String(rel.tag_name||"").replace(/^sm-host-/,"");if(!v)return;
@@ -67,12 +67,6 @@ document.querySelectorAll('[data-size="'+a.name+'"]').forEach(function(el){el.te
 var d=String(a.digest||"").replace(/^sha256:/,"");
 document.querySelectorAll('[data-hash="'+a.name+'"]').forEach(function(el){if(d){el.textContent=a.name+": "+d;hashes++}});
 });
-// Releases from before the Setup.exe files keep the ZIP as the Windows download.
-var have={};(rel.assets||[]).forEach(function(a){have[a.name]=1});
-document.querySelectorAll("[data-needs]").forEach(function(el){if(!have[el.getAttribute("data-needs")])el.hidden=true});
-document.querySelectorAll("[data-hash]").forEach(function(el){if(!el.textContent)el.parentNode.hidden=true});
-if(!have["StatsMagicHost-Setup.exe"])document.querySelectorAll("[data-zip-only]").forEach(function(el){el.hidden=false});
-if(!have["StatsMagicHost-Setup.exe"])document.querySelectorAll("[data-zip]").forEach(function(el){el.className="button primary";el.firstChild.textContent="Download for Windows ↓ "});
 if(hashes)document.querySelector("[data-hash-intro]").textContent="For "+v+", the results should be:";
 }).catch(function(){});
 fetch("plugins/catalog.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
@@ -84,11 +78,30 @@ Object.keys(p.downloads||{}).forEach(function(platform){var d=p.downloads[platfo
 a.href=d.url;a.textContent=(names[key]||key)+" "+p.version+" for "+(os[platform]||platform);c.textContent=d.sha256;
 li.appendChild(a);li.appendChild(document.createTextNode(" · SHA-256 "));li.appendChild(c);ul.appendChild(li)})});
 }).catch(function(){document.querySelector("[data-plugins]").textContent="The plugin list could not be loaded."});
-fetch("https://api.github.com/repos/SteeZyT33/stats-magic-host-downloads/releases?per_page=50",{headers:{Accept:"application/vnd.github+json"}})
-.then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
-.then(function(list){var sel=document.querySelector("[data-older]"),go=document.querySelector("[data-older-go]");
+var releases=fetch("https://api.github.com/repos/SteeZyT33/stats-magic-host-downloads/releases?per_page=50",{headers:{Accept:"application/vnd.github+json"}})
+.then(function(r){if(!r.ok)throw new Error(r.status);return r.json()});
+// The Setup files live in their own release (sm2-v…), not always the latest one: use the newest
+// published release that has them. Without one, the ZIP stays the Windows download.
+Promise.all([latestDone,releases.catch(function(){return[]})]).then(function(all){
+var setup=null;all[1].some(function(rel){if(rel.draft||rel.prerelease)return false;
+if((rel.assets||[]).some(function(a){return a.name==="StatsMagicHost-Setup.exe"})){setup=rel;return true}return false});
+if(setup){var have={};
+setup.assets.forEach(function(a){have[a.name]=1;
+document.querySelectorAll('a[data-needs="'+a.name+'"]').forEach(function(el){if(a.browser_download_url)el.href=a.browser_download_url});
+document.querySelectorAll('[data-size="'+a.name+'"]').forEach(function(el){el.textContent=" · "+(a.size/1048576).toFixed(1)+" MiB"});
+var d=String(a.digest||"").replace(/^sha256:/,"");
+document.querySelectorAll('[data-hash="'+a.name+'"]').forEach(function(el){if(d)el.textContent=a.name+": "+d})});
+document.querySelectorAll("[data-needs]").forEach(function(el){if(!have[el.getAttribute("data-needs")])el.hidden=true});
+var sv=String(setup.tag_name||"").replace(/^sm2-|^sm-host-/,"");if(sv)document.querySelectorAll("[data-setup-version]").forEach(function(el){el.textContent=sv.toUpperCase()});
+}else{
+document.querySelectorAll("[data-needs]").forEach(function(el){el.hidden=true});
+document.querySelectorAll("[data-zip-only]").forEach(function(el){el.hidden=false});
+document.querySelectorAll("[data-zip]").forEach(function(el){el.className="button primary";el.firstChild.textContent="Download for Windows ↓ "})}
+document.querySelectorAll("[data-hash]").forEach(function(el){if(!el.textContent)el.parentNode.hidden=true});
+});
+releases.then(function(list){var sel=document.querySelector("[data-older]"),go=document.querySelector("[data-older-go]");
 list.forEach(function(rel){if(rel.draft||!rel.html_url)return;var o=document.createElement("option");o.value=rel.html_url;
-o.textContent=String(rel.tag_name||"").replace(/^sm-host-/,"")+(rel.prerelease?" (pre-release)":"")+(rel.published_at?" · "+rel.published_at.slice(0,10):"");sel.appendChild(o)});
+var t=String(rel.tag_name||"");o.textContent=t.replace(/^sm-host-|^sm2-/,"")+(/^sm2-/.test(t)?" Setup":"")+(rel.prerelease?" (pre-release)":"")+(rel.published_at?" · "+rel.published_at.slice(0,10):"");sel.appendChild(o)});
 sel.addEventListener("change",function(){go.href=sel.value});
 }).catch(function(){});
 </script>
