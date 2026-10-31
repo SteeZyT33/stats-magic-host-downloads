@@ -1,0 +1,17 @@
+Package: statsmagic
+Version: 1.14.2
+Architecture: amd64
+Maintainer: Stats Magic <https://stats.amaras-lab.com>
+Depends: systemd, lib32gcc-s1, passwd
+Installed-Size: 68672
+Section: games
+Priority: optional
+Homepage: https://stats.amaras-lab.com
+Description: Stats Magic Host and SM² for CS2 dedicated servers
+ Runs the Stats Magic host as the statsmagic systemd service and adds the
+ sm2 command, a terminal app to manage this computer's CS2 servers.
+ Pair with the website: sudo sm2-setup pair
+Filename: pool/main/s/statsmagic/statsmagic_1.14.2_amd64.deb
+Size: 17125044
+MD5sum: 6adb9a0d88aec69531809dbb2550c2ca
+SHA256: 37ab19898c1cad91c28cdc0d292b92b5688a5e7ac5de55fd3a1a9e07b69c456c

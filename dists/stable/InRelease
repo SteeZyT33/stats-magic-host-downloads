@@ -1,0 +1,21 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: Stats Magic
+Label: Stats Magic
+Suite: stable
+Codename: stable
+Date: Sat, 31 Oct 2026 17:25:12 GMT
+Architectures: amd64
+Components: main
+Description: Stats Magic Host and SM2
+SHA256:
+ b5555899b3cb1c5a950abcbf490f3b402c12988ed03f356a6a71f1150cd468db 685 main/binary-amd64/Packages
+ 20528a4adbcdda6b881c3d6306baa7f8801b103507cb9dd30abe93e562dd86d4 454 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQQze3Ykf6bkRAgo82/XSKchwRZ1igUCauYkeAAKCRDXSKchwRZ1
+isGsAQCLftZu7V/iemiqmRb3NFAm4cA0/JEiLqD5WFyWA4reFAEA+r+N5ukNvlTl
++LITkHLPoh41pFiLBuIklUPHrFgCSQg=
+=2CH8
+-----END PGP SIGNATURE-----
