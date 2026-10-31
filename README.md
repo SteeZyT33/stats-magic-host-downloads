@@ -12,7 +12,15 @@ The package is unsigned. Windows may show a SmartScreen warning.
 
 ## Linux (x86_64)
 
-Download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz), then run `tar -xzf sm-host-linux-amd64.tar.gz` and start `./sm-host` from the extracted folder. Pair using the code from your Stats Magic website. Linux packages are included from v1.13.4 onward.
+Stats Magic Host + SM² installs from the signed apt repository (served from [stats-magic-apt](https://github.com/SteeZyT33/stats-magic-apt)):
+
+```
+wget -qO- https://steezyt33.github.io/stats-magic-apt/setup.sh | sudo sh
+```
+
+Then pair with `sudo sm2-setup pair` and open SM² with `sm2`. `sudo apt upgrade` keeps it up to date.
+
+The older host-only build: download [the latest sm-host for Linux](https://github.com/SteeZyT33/stats-magic-host-downloads/releases/latest/download/sm-host-linux-amd64.tar.gz), then run `tar -xzf sm-host-linux-amd64.tar.gz` and start `./sm-host` from the extracted folder. Pair using the code from your Stats Magic website. Linux packages are included from v1.13.4 onward.
 
 ## Integrity
 
