@@ -83,7 +83,7 @@ var releases=fetch("https://api.github.com/repos/SteeZyT33/stats-magic-host-down
 // The Setup files live in their own release (sm2-v…), not always the latest one: use the highest
 // version among published releases that have them (the API's list order is not version order).
 // Without one, the ZIP stays the Windows download.
-function ver(rel){return String(rel.tag_name||"").replace(/^[^0-9]*/,"").split(".").map(Number)}
+function ver(rel){var m=/(\d+(?:\.\d+)*)$/.exec(String(rel.tag_name||""));return m?m[1].split(".").map(Number):[]}
 function newer(a,b){var x=ver(a),y=ver(b);for(var i=0;i<Math.max(x.length,y.length);i++){if((x[i]||0)!==(y[i]||0))return (x[i]||0)>(y[i]||0)}return false}
 Promise.all([latestDone,releases.catch(function(){return[]})]).then(function(all){
 var setup=null;all[1].forEach(function(rel){if(rel.draft||rel.prerelease)return;
