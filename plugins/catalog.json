@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "serial": 2,
+  "serial": 3,
   "plugins": {
     "metamod": {
       "version": "2.0.0-git1469",
@@ -16,28 +16,28 @@
       }
     },
     "counterstrikesharp": {
-      "version": "1.0.380",
+      "version": "1.0.381",
       "downloads": {
         "windows": {
-          "url": "https://github.com/roflmuffin/CounterStrikeSharp/releases/download/v1.0.380/counterstrikesharp-with-runtime-windows-1.0.380.zip",
-          "sha256": "9a8881f83054a066f3f105d7f97b7c8a683104a4b5a381ea048d6b9a07c11203"
+          "url": "https://github.com/roflmuffin/CounterStrikeSharp/releases/download/v1.0.381/counterstrikesharp-with-runtime-windows-1.0.381.zip",
+          "sha256": "df2167c937686b7f7e9612924f5ecf669be33a666dd7e4c690be6954d40944ac"
         },
         "linux": {
-          "url": "https://github.com/roflmuffin/CounterStrikeSharp/releases/download/v1.0.380/counterstrikesharp-with-runtime-linux-1.0.380.zip",
-          "sha256": "f0653332a517c9edbaf8d6bfeb2ffec5aa730638ebd5e568d9753fa1063ba68e"
+          "url": "https://github.com/roflmuffin/CounterStrikeSharp/releases/download/v1.0.381/counterstrikesharp-with-runtime-linux-1.0.381.zip",
+          "sha256": "3de07c58ebc152dc4121e45c6cd58622566df2146ae6ccf134f6b44aa339782a"
         }
       }
     },
     "multiaddonmanager": {
-      "version": "1.7.4",
+      "version": "1.7.5",
       "downloads": {
         "windows": {
-          "url": "https://github.com/Source2ZE/MultiAddonManager/releases/download/v1.7.4/MultiAddonManager-v1.7.4-windows.zip",
-          "sha256": "7265de6401108c0bc38549ad3bf1a95838f4e21531b4372b12ec7f68694699e9"
+          "url": "https://github.com/Source2ZE/MultiAddonManager/releases/download/v1.7.5/MultiAddonManager-v1.7.5-windows.zip",
+          "sha256": "9bf94b8ce32fc13a9dcd062ac954518be9f59cf1abff78ebe0f1988c0c8a99e7"
         },
         "linux": {
-          "url": "https://github.com/Source2ZE/MultiAddonManager/releases/download/v1.7.4/MultiAddonManager-v1.7.4-steamrt3.tar.gz",
-          "sha256": "1e4cb517308f8a6bd33c8fcb6905bf9d5c864258904374e4859f0bdd94fa2086"
+          "url": "https://github.com/Source2ZE/MultiAddonManager/releases/download/v1.7.5/MultiAddonManager-v1.7.5-steamrt3.tar.gz",
+          "sha256": "e6e6ff6470153b4579f7d668871c3562184ef325d9934bdfb6566c34cae274b3"
         }
       }
     },
