@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "serial": 3,
+  "serial": 4,
   "plugins": {
     "metamod": {
       "version": "2.0.0-git1469",
@@ -47,6 +47,24 @@
         "any": {
           "url": "https://github.com/shobhit-pathak/MatchZy/releases/download/0.9.2/MatchZy-0.9.2.zip",
           "sha256": "8618294d1cfd1f951eeedc2e0b97b0780435cc62df9f9b0afe6738900ea71d88"
+        }
+      }
+    },
+    "statsmagic_mapvote": {
+      "version": "0.3.4",
+      "downloads": {
+        "any": {
+          "url": "https://github.com/SteeZyT33/stats-magic-host-downloads/releases/download/statsmagic-mapvote-v0.3.4/StatsMagic.MapVote-0.3.4.zip",
+          "sha256": "e72aa48d387691eee305cfcf1f2ee8716d4e05e9196ccd77b008f57739f39c75"
+        }
+      }
+    },
+    "statsmagic_houserules": {
+      "version": "0.4.3",
+      "downloads": {
+        "any": {
+          "url": "https://github.com/SteeZyT33/stats-magic-host-downloads/releases/download/statsmagic-houserules-v0.4.3/StatsMagic.HouseRules-0.4.3.zip",
+          "sha256": "89a320a2f3b421b894e1c8951f79d3ecfbf14a11aba0073edd8b3b476591324a"
         }
       }
     }
